@@ -327,6 +327,7 @@
           }
           audio.play();
           _this.render();
+          _this.scrollToactiveSong()
         }
 
         // khi previous bài hát 
@@ -338,6 +339,7 @@
           }
           audio.play();
           _this.render();
+          _this.scrollToactiveSong()
         }
         // xử lý random bật/tắt
         randomBtn.onclick = function () {
@@ -390,7 +392,12 @@
 
       },
       scrollToactiveSong: function(){
-
+          setTimeout(() => {
+            $('.song.active').scrollIntoView({
+                behavior: 'smooth',
+                block:'center',
+            })
+          },300)
       },
       start: function () {
         //định nghĩa các thuộc tính
